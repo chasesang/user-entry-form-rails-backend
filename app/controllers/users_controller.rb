@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+skip_before_filter :verify_authenticity_token
   def new
     @user = User.new
   end
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create user_params
+    redirect_to users_path
   end
 
   private
