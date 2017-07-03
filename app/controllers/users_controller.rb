@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 skip_before_filter :verify_authenticity_token
+# remember why skiping before filter.
   def new
     @user = User.new
   end
